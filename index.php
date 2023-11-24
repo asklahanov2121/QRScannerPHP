@@ -15,6 +15,13 @@
   .row{
     display:flex;
   }
+  .input {
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
+  }
 </style>
 </head>
 <body>
@@ -23,7 +30,7 @@
 
 <div class="row">
   <div class="col">
-    <div style="width:500px;" id="reader"></div>
+    <div style="width:900px;height: 700px;" id="reader"></div>
   </div><audio id="myAudio1">
   <source src="success.mp3" type="audio/ogg">
 </audio>
@@ -54,11 +61,11 @@ function playAudio() {
 } 
 
 
-  </script>
-  <div class="col" style="padding:30px;"><br>
-    <div>Result</div><form action="">
+  </script><br>
+  <div class="col" style="padding: 20px;">
+    <div><span>Result</span></div><form action="">
      <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="Result Here" readonly="" disabled/></form>
-     <p>Status: <span id="txtHint"></span></p>
+     <p><h2>Status: </h2><span id="txtHint"></span></p>
   </div>
 </div>
 <script type="text/javascript">
@@ -71,9 +78,9 @@ playAudio();
 function onScanError(errorMessage) {
   //handle scan error
 }
-var html5QrcodeScanner = new Html5QrcodeScanner(
+var AlbertFunctions = new AlbertFunctions(
     "reader", { fps: 10, qrbox: 250 });
-html5QrcodeScanner.render(onScanSuccess, onScanError);
+AlbertFunctions.render(onScanSuccess, onScanError);
 
 </script>
 </html>
